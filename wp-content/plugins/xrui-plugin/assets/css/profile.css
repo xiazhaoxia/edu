@@ -1,0 +1,163 @@
+.weui_tab_bd {
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    padding-bottom: 0;
+}
+
+.user-page {
+    padding: 5px 10px;
+}
+
+.user-page-box {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+}
+
+.user-page-box i {
+    font-style: normal;
+}
+.po-re {
+    position: relative;
+}
+.f-left {
+    float: left;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: .24rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tel:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background: url(../images/le/icon.png) no-repeat -22px -172px;
+    background-size: 500px;
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.user-page .user-page-box i span {
+    float: left;
+}
+.profile .iconfont span {
+    font-size: 0.8em;
+}
+.user-page-box span {
+    color: #323232;
+}
+.iconfont span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #9fa9b2;
+}
+.pdl35 {
+    padding-left: 35px;
+}
+
+.user-page .user-page-box .center-phone {
+    color: #fff;
+}
+.user-page .user-page-box p {
+    color: #4d5b65;
+}
+.f-right {
+    float: right;
+}
+
+.icon-sq:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background: url(../images/le/icon.png) no-repeat -82px -172px;
+    background-size: 500px;
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+
+.icon-juese:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background: url(../images/le/icon.png) no-repeat -166px -172px;
+    background-size: 500px;
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+
+.user-page .page-color p {
+    color: #D24040;
+}
+
+.user-page .user-page-box p {
+    color: #4d5b65;
+}
+.f-right {
+    float: right;
+}
+
+.page-color i {
+    font-style: normal;
+}
+.user-page-box i {
+    font-style: normal;
+}
+.po-re {
+    position: relative;
+}
+.f-left {
+    float: left;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: .24rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icons-juese:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background: url(../images/le/icon.png) no-repeat -238px -172px;
+    background-size: 500px;
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+
+.icons-juese:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background: url(../images/le/icon-wen.png) no-repeat left center;
+    background-size: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: -57px;
+}
+
+.sq-tips {
+    margin-top: 20px;
+    color: #676572;
+}

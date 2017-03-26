@@ -1,0 +1,250 @@
+$(function() {
+	imgLoad();
+	lazy_backgroundLoad();
+	validateImageLoad();
+
+	// 收藏
+	$('a.js-favorite-btn').live('click', function(e) {
+		e.preventDefault();
+		var $this = $(this), href = $this.prop('href'), url = $this
+				.data("url"), key = $this.data("key"), title = $this
+				.data("title"), description = $this
+				.data("description");
+			
+		le_ajax({
+			url : href,
+			data : {
+				url : url,
+				key : key,
+				title : title,
+				description : description
+			},
+			success : function(opts, response) {
+				$.alert(response.result.msg);
+				if(response.data.type_code == 'cancel'){
+					$this.html('收藏');
+					$this.css("background-color","");
+				}else if(response.data.type_code == 'handle'){
+					$this.html('已收藏');
+					$this.css("background-color","#ee5d3f");
+				}
+//				$.alert(response.result.msg);
+			},
+			error : function(opts, response) {
+				$.alert(response.result.msg);
+			}
+		});
+	});
+	
+	// 举报
+	$('a.js-report-btn').live('click',function(e) {
+		e.preventDefault();
+		var $this = $(this), href = $this.prop('href'), url = $this
+				.data("url"), key = $this.data("key"), title = $this
+				.data("title"), description = $this
+				.data("description");
+				
+				
+		$.confirm("确定要举报该条内容？", function() {
+			//点击确认后的回调函数
+			le_ajax({
+				url : href,
+				data : {
+					url : url,
+					key : key,
+					title : title,
+					description : description
+				},
+				success : function(opts, response) {
+					$.alert(response.result.msg);
+				},
+				error : function(opts, response) {
+					$.alert(response.result.msg);
+				}
+			});
+		}, function() {
+			  //点击取消后的回调函数
+			  
+		});
+	});
+
+	// 点赞 //赞，拍等，有数量操作的按钮
+	$('a.js-count-btn').live('click', function(e) {
+		e.preventDefault();
+		var $this = $(this), href = $this.prop('href');
+		le_ajax({
+			url : href,
+			data : {},
+			success : function(opts, response) {
+				$.alert(response.result.msg);
+				if(response.data.type_code == 'cancel'){
+					$this.html('点赞');
+					$this.css("background-color","");
+				}else if(response.data.type_code == 'handle'){
+					$this.html('已赞');
+					$this.css("background-color","#ee5d3f");
+				}
+//				var $count = $this.find(".count");
+//				var count = parseInt($count.text());
+//				$count.text(count + 1);
+			},
+			error : function(opts, response) {
+				$.alert(response.result.msg);
+			}
+		});
+	});
+
+	// 报名
+	$('.apply_join').live('click',function() {
+		var id = $(this).data('id'), url = $(this).data('url'),that = $(this);
+		$.confirm("确定要报名参加此次活动？", function() {
+			//点击确认后的回调函数
+			le_ajax({
+				url : url,
+				data : {
+					id : id
+				},
+				success : function(opts, response) {
+					$.alert(response.result.msg);
+					that.css("background-color","#CCCCCC");
+					that.attr("disabled",true);
+					that.html('已报名');
+					
+					var $count = $("#baoming_count");//报名人数的标签
+					if($count.length > 0){
+						var count = parseInt($count.html());
+						$count.html(count + 1);
+					}
+					
+					var $plist = $('.pinglun-list-my');//评论列表栏目
+					if($plist.length > 0){
+						$plist.show();//评论列表栏目
+					}
+				},
+				error : function(opts, response) {
+					$.alert(response.result.msg);
+				}
+			});
+		}, function() {
+			  //点击取消后的回调函数
+			  
+		});
+		
+		return false;
+	});
+
+	// 评论提交
+	var $comment_form = $(".comment-area .comment-form");
+	if ($comment_form.length) {
+		$(".js-ajax-submit", $comment_form).on("click",function(e) {
+			var btn = $(this), form = btn.parents(".comment-form");
+			e.preventDefault();
+
+			var url = btn.data('action') ? btn.data('action'): form.attr('action');
+			var data = form.serialize() + "&url=" + encodeURIComponent(location.href);
+			$.ajax({
+				url: url,
+				dataType: 'json',
+				type: "POST",
+				beforeSend: function() {
+					$.showLoading("正在加载...");
+				},
+				data: data,
+				success: function(data, textStatus, jqXHR) {
+					if(data.state === 'success') {
+						var $comments = $('.comments');
+						var $comment_postbox = form.find(".comment-postbox");
+						var comment_content = $comment_postbox.val();
+						var str = $('.comment-tpl').html();
+						
+						str = str.replace(/#data.id#/, data.data.id);
+						str = str.replace(/#comment_content#/, comment_content);
+						$comments.append(str);
+						$comment_postbox.val("");
+					}else if(data.state === 'fail') {
+
+					}
+					$('.popup-bottom').hide();
+					$.hideLoading();
+				}
+			});
+			return false;
+		});
+	}
+})
+
+
+var default_url = "/themes/wap/Public/images/images/le/loading.gif";
+var error_url = "/themes/wap/Public/images/no-pic.jpg";
+
+//<img data="<php>echo $v['url'];</php>" src="__TMPL__Public/images/le/loading.gif"/>
+function imgLoad(){
+	$('img[data]').each(function(){
+		var __this__ = $(this);
+		var url = __this__.attr('data');
+		if(url =='' || url == default_url)//这里判断如果图片实际地址不存在或者已经加载不处理
+		{
+			return;
+		}
+		var img =new Image();//实例化一个图片的对象
+		img.src = url;//将要显示的图片加载进来
+		if(img.complete)//如果图片已经加载存在浏览器缓存中直接处理
+		{
+			__this__.attr('src',url);//将要显示的图片替换过来
+			return;
+		}
+		img.onload =function(){//要显示的图片加载完成后做处理
+			__this__.attr('src',url);
+		}
+		img.onerror = function(){
+			__this__.attr('src',error_url);
+		}
+	});
+};
+
+function validateImageLoad(){
+	$('.validateImage').each(function(){
+		if(!validateImage($(this).data('src'))){
+			$(this).css("backgroundImage","url("+error_url+")");
+		}
+	});
+};
+
+//<p data-src="http://xxx.jpg" class="lazy_background" style='background-position: center 26%; background-image: url("__TMPL__Public/images/le/loading.gif");'></p>
+function lazy_backgroundLoad(){
+	$('.lazy_background').each(function(){
+		var __this__ = $(this);
+		var url = __this__.data('src');
+		if(url ==''|| url == default_url)//这里判断如果图片实际地址不存在或者已经加载不处理
+		{
+			return;
+		}
+		var img =new Image();//实例化一个图片的对象
+		img.src = url;//将要显示的图片加载进来
+		if(img.complete)//如果图片已经加载存在浏览器缓存中直接处理
+		{
+			__this__.css('background-image',"url("+url+")");//将要显示的图片替换过来
+			return;
+		}
+		img.onload =function(){//要显示的图片加载完成后做处理
+			__this__.css('background-image',"url("+url+")");
+		}
+	});
+};
+
+function validateImage(url)
+{
+	var ImgObj = new Image(); //判断图片是否存在
+	ImgObj.src = url;
+	//没有图片，则返回-1
+	if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function escape2Html(str) {
+	var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+	return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+}

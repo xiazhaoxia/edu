@@ -1,0 +1,36 @@
+@media screen and (min-width: 560px) {
+    body {
+        background-color: #e7e8eb !important;
+        font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    }
+    .meipian {
+        width: 100%;
+        margin: 0 auto !important;
+        min-height: 100% !important;
+        /*background-color: #fff;*/
+    }
+    .meipian-main {
+        padding: 20px 22px 20px 22px !important;
+        border-right: 1px solid $pc-border-color !important;
+        border-left: 1px solid $pc-border-color !important;
+        padding: $pc-padding-top $pc-padding-right $pc-padding-bottom $pc-padding-left !important;
+    }
+    .mp-other {
+        border-right: 1px solid $pc-border-color !important;
+        border-left: 1px solid $pc-border-color !important;
+        padding: 1px $pc-padding-right $pc-padding-bottom $pc-padding-left !important;
+    }
+    .meipian-title {
+        padding-bottom: $pc-title-padding-bottom !important;
+        margin-bottom: $pc-title-margin-bottom !important;
+        border-bottom: 1px solid $pc-title-line-color !important;
+    }
+    .meipian-bg {
+        width: 100% !important;
+    }
+}
+
+.meipian_meta a,
+.meipian-title a {
+    cursor: default;
+}

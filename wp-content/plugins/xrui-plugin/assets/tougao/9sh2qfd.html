@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://a.meipian.cn/9sh2qfd?from=webview&user=6724166 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<style type="text/css">
+	.section{
+		word-break: break-word;
+	}
+</style>
+<meta name="description" content="分享自「美篇」">
+<title>我的美篇</title>
+<link rel="stylesheet" type="text/css" id="style" href="./000.css">
+<link rel="stylesheet" type="text/css" href="./iconfont(1).css">
+<link rel="shortcut icon" href="http://static2.ivwen.com/web/a/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./video_play.css">
+<link rel="stylesheet" type="text/css" id="style" href="./web.css">
+<script src="./jquery.min.js.download"></script>
+<script type="text/javascript">
+	$(function() {
+		var $theme = 0;
+		$theme = parseInt($theme);
+
+		if($theme == 0) {
+			var $replace_id = new Array("#333", "#808080", "#ed2308", "#ff8a00", "#39b54a", "#167efb", "#b06fbb");
+		} else if($theme == 1) {
+			var $replace_id = new Array("#ffebc1", "#fbb287", "#470000", "#fed34d", "#2dec83", "#74f7ff", "#fd63ff");
+		} else if($theme == 2) {
+			var $replace_id = new Array("#fefaf5", "#fefaf5", "#470000", "#fed34d", "#2dec83", "#74f7ff", "#fefaf5");
+		} else if($theme == 3) {
+			var $replace_id = new Array("#734321", "#af7c58", "#ed2308", "#ff6000", "#39b54a", "#167efb", "#b04fbb");
+		} else if($theme == 4) {
+			var $replace_id = new Array("#ffebe0", "#f1bca7", "#ffebe0", "#ff790d", "#24ce90", "#9b99ff", "#ffebe0");
+		} else if($theme == 5) {
+			var $replace_id = new Array("#683100", "#ae7644", "#fd1949", "#f08800", "#18c849", "#00aeff", "#ca65e3");
+		} else if($theme == 6) {
+			var $replace_id = new Array("#255081", "#ae7644", "#fd1949", "#f08800", "#18c849", "#00aeff", "#ca65e3");
+		} else if($theme == 7) {
+			var $replace_id = new Array("#fafdf4", "#ced0ab", "#fc1a4a", "#ff9000", "#18c84a", "#01aeff", "#ca65e3");
+			var $replace_id_fill = new Array("#4a3721", "#a69a74", "fc1a4a", "#ff9000", "#18c84a", "#01aeff", "#ca65e3");
+		} else if($theme == 8) {
+			var $replace_id = new Array("#d1d5da", "#8b9bae", "#db2b45", "#e79c26", "#39b972", "#489eff", "#d83699");
+		} else if($theme == 9) {
+			var $replace_id = new Array("#ffebc1", "#fff5e5", "#fff5e5", "#fcb25a", "#6BE479", "#7bbcff", "#f679ce");
+		} else if($theme == 10) {
+			var $replace_id = new Array("#fff", "#fff", "#fff", "#fff", "#6df88a", "#88e2ff", "#fff");
+		} else if($theme == 11) {
+			var $replace_id = new Array("#3f0113", "#A3A1b0", "#ff395a", "#ff9845", "#10d63a", "#449efb", "#865cfd");
+		} else if($theme == 21) {
+			var $replace_id = new Array("#fff", "#dde6ea", "#fdafae", "#fed7ac", "#b1fd9b", "#b3effe", "#f9d9fe");
+		} else if($theme == 22) {
+			var $replace_id = new Array("#fff", "#cbd7dc", "#fd8e8c", "#fff", "#a8f87a", "#84d7fd", "#eeb2fd");
+		} else if($theme == 23) {
+			var $replace_id = new Array("#fff", "#d7efeb", "#fd8493", "#ff8a00", "#7cfc67", "#fff", "#eeb2fd");
+		} else if($theme == 24) {
+			var $replace_id = new Array("#fff", "#bcc8c5", "#f04f64", "#f0904f", "#50df55", "#a8d2fd", "#dd81f4");
+		} else if($theme == 25) {
+			var $replace_id = new Array("#fff", "#dedce8", "#fd7c8d", "#fda969", "#73f68e", "#a8d7fd", "#d9b0fd");
+		} else if($theme == 26) {
+			var $replace_id = new Array("#fff", "#d0e1dd", "#fd8694", "#fab485", "#79f47d", "#a9dbfd", "#fff");
+		} else if($theme == 27) {
+			var $replace_id = new Array("#fff", "#b0c7c1", "#f24a60", "#f7944b", "#46da65", "#5cbffc", "#d55bf5");
+		} else if($theme == 28) {
+			var $replace_id = new Array("#fff", "#d9d7e5", "#fff", "#fca96a", "#64f082", "#96d5fd", "#d9b0fd");
+		} else if($theme == 29) {
+			var $replace_id = new Array("#fff", "#ccc9dc", "#fd7c8d", "#f49957", "#52e772", "#fff", "#d1a0fc");
+		} else if($theme == 31) {
+			var $replace_id = new Array("#5c4748", "#5c5c5c", "#ea3f47", "#5c4748", "#5c4748", "#5c4748", "#5c4748");
+		} else if($theme == 32) {
+			var $replace_id = new Array("#130b0c", "#212121", "#3d0008", "#381d00", "#00320d", "#00233e", "#160033");
+		} else if($theme == 33) {
+			var $replace_id = new Array("#fff", "#9f9f9f", "#c800d0", "#fff", "#1b7254", "#0c5bab", "#7800ff");
+		} else if($theme == 34) {
+			var $replace_id = new Array("#f3f3f3", "#f6f6f6", "#f3f3f3", "#e6a82f", "#66d6a7", "#a9dcff", "#dbadff");
+		} else if($theme == 35) {
+			var $replace_id = new Array("#000", "#484848", "#df4b2b", "#372900", "#6faa81", "#16917a", "#000");
+		} else if($theme == 36) {
+			var $replace_id = new Array("#333", "#171717", "#950000", "#d69e19", "#333", "#094186", "#4c1566");
+		} else if($theme == 37) {
+			var $replace_id = new Array("#585858", "#515151", "#e62d93", "#b29520", "#1b7254", "#2d545f", "#bd2de6");
+		} else if($theme == 38) {
+			var $replace_id = new Array("#f1eed9", "#aaaaaa", "#d2515d", "#aca781", "#b9d9c7", "#b9c6d8", "#f1eed9");
+		} else if($theme == 39) {
+			var $replace_id = new Array("#eaeaea", "#989898", "#e7328b", "#ffb06f", "#00aba5", "#046fba", "#c746e7");
+		} else if($theme == 41) {
+			var $replace_id = new Array("#315600", "#9ea956", "#F43737", "#FFA421", "#1AD210", "#34B0F0", "#9B55DC");
+		} else if($theme == 42) {
+			var $replace_id = new Array("#24308E", "#868ec8", "#f75d7c", "#ff7e00", "#00b38b", "#4789fa", "#9f2bf9");
+		} else if($theme == 43) {
+			var $replace_id = new Array("#18629c", "#71afcf", "#fb486a", "#ff7f39", "#00ce27", "#0b95ff", "#c32af5");
+		} else if($theme == 44) {
+			var $replace_id = new Array("#652a3b", "#998697", "#f0739b", "#fd7134", "#00bd81", "#1787f9", "#7e3aef");
+		} else if($theme == 45) {
+			var $replace_id = new Array("#6b2665", "#a07c97", "#f51a43", "#e86200", "#00a873", "#1367cf", "#8b29ef");
+		} else if($theme == 46) {
+			var $replace_id = new Array("#fefee6", "#ada9a8", "#bf2946", "#f98f1c", "#16d11b", "#249df1", "#bc30f6");
+		} else if($theme == 47) {
+			var $replace_id = new Array("#0b004c", "#696da4", "#f2375f", "#ff7a03", "#03a261", "#0d7fff", "#c903ed");
+		} else if($theme == 48) {
+			var $replace_id = new Array("#002d40", "#5e8795", "#ed3434", "#f4de21", "#009a5b", "#0078ff", "#d051ff");
+		} else if($theme == 49) {
+			var $replace_id = new Array("#e5f5ff", "#92a8b9", "#f53a3a", "#fea01b", "#7af430", "#29a2ff", "#cc32ff");
+		} else if($theme == 51) {
+			var $replace_id = new Array("#623630", "#b39e9b", "#f66679", "#ffae4e", "#93e961", "#74a5f6", "#ec82be");
+		} else if($theme == 52) {
+			var $replace_id = new Array("#681c3e", "#bb8fa7", "#ff446c", "#ff8a34", "#08daa6", "#41a9f1", "#d06aea");
+		} else if($theme == 53) {
+			var $replace_id = new Array("#104949", "#93aca9", "#d5574b", "#f6aa32", "#279761", "#358fc9", "#8366cd");
+		} else if($theme == 54) {
+			var $replace_id = new Array("#610142", "#b99ab0", "#e0327d", "#fb891a", "#2bc485", "#2db7ff", "#9f71fb");
+		} else if($theme == 55) {
+			var $replace_id = new Array("#3c004f", "#a47ba1", "#f4355d", "#ff5a00", "#0eca7d", "#1673e5", "#bc15da");
+		} else if($theme == 56) {
+			var $replace_id = new Array("#2b253f", "#9796ac", "#ee3637", "#ff7e07", "#66cb42", "#0590f1", "#a359f6");
+		} else if($theme == 57) {
+			var $replace_id = new Array("#1d3200", "#84975a", "#ed4949", "#fb8b27", "#06cc84", "#54b3e9", "#e262bc");
+		} else if($theme == 58) {
+			var $replace_id = new Array("#592702", "#b5a597", "#f14d6f", "#feb543", "#98db08", "#4ccbef", "#f468e5");
+		} else if($theme == 59) {
+			var $replace_id = new Array("#ffffff", "#afb9be", "#f73f4c", "#f38f2d", "#35d392", "#3b94f7", "#d169ef");
+		} else if($theme == 9000) {
+			var $replace_id = new Array("#e9697a", "#dde6ea", "#fdafae", "#b1fd9b", "#fed7ac", "#b3effe", "#f9d9fe");
+		} else if($theme == 9001) {
+			var $replace_id = new Array("#9f0026", "#dde6ea", "#fdafae", "#b1fd9b", "#fed7ac", "#b3effe", "#f9d9fe");
+		} else if($theme == 9002) {
+			var $replace_id = new Array("#db017c", "#dde6ea", "#fdafae", "#b1fd9b", "#fed7ac", "#b3effe", "#f9d9fe");
+		} else if($theme == 9003) {
+			var $replace_id = new Array("#130b0c", "#808080", "#ed2308", "#ff8a00", "#39b54a", "#167efb", "#b06fbb");
+		} else if($theme == 9004) {
+			var $replace_id = new Array("#333", "#808080", "#ed2308", "#ff8a00", "#39b54a", "#167efb", "#b06fbb");
+		} else if($theme == 9005) {
+			var $replace_id = new Array("#494949", "#494949", "#494949", "#db9b00", "#494949", "#494949", "#494949");
+		} else if($theme == 9006) {
+			var $replace_id = new Array("#cbcbcb", "#cbcbcb", "#94008b", "#d69e19", "#27b0a1", "#81a3ff", "#b06fbb");
+		} else if($theme == 9007) {
+			var $replace_id = new Array("#aff6f3", "#759a98", "#ea3d20", "#f98744", "#45ce25", "#35b4f6", "#9758d3");
+		} else if($theme == 9008) {
+			var $replace_id = new Array("#fecd6f", "#bcac8e", "#f53d3d", "#ee722a", "#2bbc23", "#447395", "#9f49ef");
+		}
+
+		var find_hex = new Array("#010101", "#808080", "#ed2308", "#ff8a00", "#39b54a", "#167efb", "#b04fbb");
+		var find_rgb = new Array("rgb(1, 1, 1)", "rgb(128, 128, 128)", "rgb(237, 35, 8)", "rgb(255, 138, 0)", "rgb(57, 181, 74)", "rgb(22, 126, 251)", "rgb(176, 79, 187)");
+		var find_RGB = new Array("RGB(1, 1, 1)", "RGB(128, 128, 128)", "RGB(237, 35, 8)", "RGB(255, 138, 0)", "RGB(57, 181, 74)", "RGB(22, 126, 251)", "RGB(176, 79, 187)");
+		var find_iosrgb = new Array("rgb(0, 0, 0)", "rgb(192, 192, 192)", "rgb(255, 0, 0)", "rgb(255, 128, 0)", "rgb(57, 181, 74)", "rgb(22, 126, 251)", "rgb(160, 32, 240)");
+		var font = $("font");
+		var span = $("span").not("#meipian_vote span");
+		span.each(function(index, ele) {
+			for(var i = 0; i < find_hex.length; i++) {
+				var color = $(ele).css("color");
+				if(color == find_hex[i] || color == find_rgb[i] || color == find_RGB[i] || color == find_iosrgb[i]) {
+					$(ele).css("color", $replace_id[i]).attr("color", $replace_id[i])
+				}
+				if($theme == 7 && i == 0){
+					if($(ele).parents(".section").hasClass("fill")){
+						$(ele).css("color", "#4a3721").attr("color", "#4a3721")
+					}
+				}
+			}
+		})
+		font.each(function(index, ele) {
+			for(var i = 0; i < find_hex.length; i++) {
+				var color = $(ele).css("color");
+				if(color == find_hex[i] || color == find_rgb[i] || color == find_RGB[i] || color == find_iosrgb[i]) {
+					$(ele).css("color", $replace_id[i]).attr("color", $replace_id[i])
+				}
+				if($theme == 7 && i == 0){
+					if($(ele).parents(".section").hasClass("fill")){
+						$(ele).css("color", "#4a3721").attr("color", "#4a3721")
+					}
+				}
+			}
+		})
+	})
+</script>
+<!--<script src="https://t-ss2.meipian.me/theme/v2/js/echo.min.js" type="text/javascript" charset="utf-8"></script>-->
+<script>
+//$(function(){
+//	Echo.init({
+//		offset:1200
+//	});
+//});
+</script>
+</head>
+
+<body>
+<!--<img src="http://static2.ivwen.com/user/6724166/c7530d521c7000015ca4dd00152c121c.jpg-thumb2" width="0" height="0" />-->
+<div class="meipian">
+
+	<div class="meipian-bg"></div>
+	<div class="meipian-main">
+		<h1 class="meipian-title">我的美篇</h1>
+		<div class="meipian_meta clearfix">
+			<span>2016-12-04</span>
+			<span><a href="https://a.meipian.cn/9sh2qfd?from=webview&amp;user=6724166#">ruixj</a></span>
+			<span>阅读 0</span>
+</div>
+
+<div class="meipian-content">
+			<div class="section section-on section-border fill"><img class="images shadow img-border" src="./c7530d521c7000015ca4dd00152c121c.jpg-mobile" onclick="preview(0)"></div>		</div>
+</div></div>
+
+
+<script>
+function preview(i)
+{
+	var imgList = ['http://static2.ivwen.com/user/6724166/c7530d521c7000015ca4dd00152c121c.jpg',];
+	if (window.android)
+	{
+		window.android.previewImage(i, imgList);
+	}
+
+	var message = {
+		current: imgList[i],
+		urls:  imgList
+	};
+	try
+	{
+		wx.previewImage(message);
+	}
+	catch(err) {}
+	window.webkit.messageHandlers.previewImage.postMessage(message);
+};
+</script>
+
+
+
+
+</body></html>
