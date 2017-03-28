@@ -5960,7 +5960,7 @@ div#sitewide-notice div#message p #close-notice:after {
 }
 
 #buddypress .standard-form div.submit input {
-    margin-right: 15px;
+    
     white-space: normal;
     cursor: pointer;
     font-family: inherit;

@@ -2077,10 +2077,14 @@ body:not(.bp-user).activity .entry-content > p {
 }
 
 #buddypress div#item-header #item-meta p {
-    margin: 10px 0 0;
-    font-size: 15px;
-    line-height: 21px;
+    font-size: 1em;
     color: #fff;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1em;
 }
 
 /* Header Title */
@@ -2649,6 +2653,12 @@ body.activity:not(.bp-user)  .item-list-tabs ul li a span,
 #buddypress #friend-list div.action a {
     /*width: 180px;*/
 	width:100%;
+}
+
+
+#buddypress #friend-list div.action a.remove {
+    /*width: 180px;*/
+    width:auto;
 }
 
 #buddypress #admins-list li,
